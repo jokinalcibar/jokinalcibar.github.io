@@ -1,0 +1,106 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing {
+  .pricing-item {
+    background-color: var(--surface-color);
+    box-shadow: 0px 5px 90px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+
+    h3 {
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    h4 {
+      color: var(--accent-color);
+      font-size: 42px;
+      font-family: var(--default-font);
+      font-weight: 500;
+
+      sup {
+        font-size: 20px;
+        top: -15px;
+        left: -3px;
+      }
+
+      span {
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+
+    ul {
+      padding: 20px 0;
+      list-style: none;
+      text-align: center;
+      line-height: 20px;
+      font-size: 14px;
+
+      li {
+        padding-bottom: 16px;
+      }
+
+      .na {
+        color: color-mix(in srgb, var(--default-color), transparent 60%);
+        text-decoration: line-through;
+      }
+    }
+
+    .btn-wrap {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .btn-buy {
+      color: var(--accent-color);
+      background-color: transparent;
+      border: 2px solid var(--accent-color);
+      display: inline-block;
+      padding: 10px 40px 12px 40px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-family: var(--heading-font);
+      font-weight: 600;
+      transition: 0.3s;
+
+      &:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+      }
+    }
+  }
+
+  .recommended {
+    .btn-buy {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+
+      &:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+        border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+      }
+    }
+  }
+
+  .recommended-badge {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 13px;
+    padding: 3px 25px 6px 25px;
+    background: color-mix(in srgb, var(--accent-color), transparent 92%);
+    color: var(--accent-color);
+    border-radius: 50px;
+  }
+}
