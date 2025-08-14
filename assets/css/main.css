@@ -642,7 +642,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 45px 0;
   scroll-margin-top: 80px;
   overflow: clip;
 }
@@ -710,7 +710,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 10vh; /* Reduced from 51.5vh */
+  min-height: 55vh; /* Reduced from 51.5vh */
   position: relative;
   padding: 0px 0 0px 0; /* Reduced padding */
   display: flex;
@@ -739,7 +739,7 @@ section,
 
 
 .hero .container {
-  margin-top: -100px;
+  margin-top: 0px;
   padding: 10px;
   position: relative;
   z-index: 3;
