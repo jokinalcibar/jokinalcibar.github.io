@@ -739,17 +739,12 @@ section,
 }
 
 
-/* .hero .container {
-  margin-top: -150px; 
+.hero .container {
+  margin-top: 0px;
   position: relative;
   z-index: 3;
-} */
-
-.hero .container {
-  margin-top: 0 !important;
-  padding: 5px !important; /* Minimal padding */
-  transform: scale(0.8); /* Optional: Scale down content if needed */
 }
+
 
 
 .hero h2 {
