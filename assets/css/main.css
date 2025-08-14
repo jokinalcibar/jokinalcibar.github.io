@@ -708,19 +708,17 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
   width: 100%;
-  min-height: 51.5vh;
-  /* max-height: 600px; Add max-height for larger screens */
+  min-height: 40vh; /* Reduced from 51.5vh */
   position: relative;
-  /* overflow: hidden; */
-  /* padding: 0; */
-  padding: 120px 0 60px 0;
+  padding: 60px 0 30px 0; /* Reduced padding */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Ensures content stays contained */
 }
-
 
 .hero:before {
   content: "";
@@ -732,18 +730,23 @@ section,
 
 .hero img {
   position: absolute;
-  top: 0px;     
-  left: 0px;   
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  display: block;
-  z-index: 1;
+  object-position: center 30%; /* Adjusts image focus point */
 }
 
-.hero .container {
+/* .hero .container {
   margin-top: -150px; 
+  position: relative;
+  z-index: 3;
+} */
+
+.hero .container {
+  margin-top: 0; /* Removed negative margin */
+  padding: 20px;
   position: relative;
   z-index: 3;
 }
