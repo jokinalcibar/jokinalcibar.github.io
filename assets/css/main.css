@@ -719,8 +719,6 @@ section,
   overflow: hidden; 
 }
 
-
-
 .hero:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 30%);
@@ -743,6 +741,7 @@ section,
 
 .hero .container {
   margin-top: 0;
+  padding: 20px 0;
   position: relative;
   z-index: 3;
 }
