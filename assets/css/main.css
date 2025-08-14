@@ -744,7 +744,7 @@ section,
 } */
 
 .hero .container {
-  margin-top: -40px; /* Removed negative margin */
+  margin-top: -200px; /* Removed negative margin */
   position: relative;
   z-index: 3;
 }
