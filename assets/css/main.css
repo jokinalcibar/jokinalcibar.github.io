@@ -710,10 +710,9 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 20vh; /* Reduced from 51.5vh */
+  min-height: 35vh; /* Reduced from 51.5vh */
   position: relative;
-  /* padding: 60px 0 30px 0;  */
-  padding: 0;
+  padding: 40px 0 20px 0;  
   display: flex;
   align-items: center;
   justify-content: center;
