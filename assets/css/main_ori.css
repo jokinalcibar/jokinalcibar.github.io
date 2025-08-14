@@ -151,6 +151,7 @@ h6 {
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo {
@@ -1059,6 +1060,91 @@ section,
     width: 80%;
   }
 }
+
+/*--------------------------------------------------------------
+# Publications Section
+--------------------------------------------------------------*/
+
+.publication-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.publication-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.publication-figure {
+  width: 200px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.publication-figure img {
+  max-height: 150px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.authors {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.journal {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.publication-links a {
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.btn-download, .btn-doi {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-download {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-doi {
+  background-color: #e9ecef;
+  color: #0066cc;
+  border: 1px solid #ced4da;
+}
+
+@media (max-width: 768px) {
+  .publication-item {
+      flex-direction: column;
+  }
+  
+  .publication-figure {
+      width: 100%;
+      margin-top: 15px;
+  }
+  
+  .publication-content {
+      padding-right: 0;
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Portfolio Section
