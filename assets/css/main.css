@@ -706,7 +706,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-#  Section
+# Hero Section
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
@@ -751,11 +751,11 @@ section,
   font-size: 36px;
   font-weight: 700;
   line-height: 56px;
-  color: #333; 
+  /* color: #333;  */
 }
 
 .hero p {
-  color: #555; /* Slightly lighter dark color for paragraph */
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin: 10px 0 0 0;
   font-size: 16px;
   font-weight: 500;
@@ -788,7 +788,7 @@ section,
 
 .hero .btn-scroll {
   transition: 0.4s;
-  color: #666; /* Darker scroll button */
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
   display: block;
   margin-top: 30px;
   animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
