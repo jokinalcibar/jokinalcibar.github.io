@@ -739,7 +739,7 @@ section,
 
 
 .hero .container {
-  margin-top: 0;
+  margin-top: -100px;
   padding: 10px;
   position: relative;
   z-index: 3;
