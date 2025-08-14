@@ -712,7 +712,8 @@ section,
   width: 100%;
   min-height: 20vh; /* Reduced from 51.5vh */
   position: relative;
-  padding: 60px 0 30px 0; /* Reduced padding */
+  /* padding: 60px 0 30px 0;  */
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
