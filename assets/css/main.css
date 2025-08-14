@@ -737,8 +737,15 @@ section,
   object-position: center 30%; /* Adjusts image focus point */
 }
 
-.hero .container {
+/* .hero .container {
   margin-top: -150px; 
+  position: relative;
+  z-index: 3;
+} */
+
+.hero .container {
+  margin-top: 0; /* Removed negative margin */
+  padding: 20px;
   position: relative;
   z-index: 3;
 }
