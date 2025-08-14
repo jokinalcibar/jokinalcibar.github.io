@@ -712,11 +712,11 @@ section,
   width: 100%;
   min-height: 40vh; /* Reduced from 51.5vh */
   position: relative;
-  padding: 60px 0 30px 0; /* Reduced padding */
+  padding: 100px 0 0px 0; /* Reduced padding */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures content stays contained */
+  /* overflow: hidden; Ensures content stays contained */
 }
 
 .hero:before {
@@ -745,7 +745,7 @@ section,
 
 .hero .container {
   margin-top: 0; /* Removed negative margin */
-  padding: 200px;
+  padding: 100px;
   position: relative;
   z-index: 3;
 }
