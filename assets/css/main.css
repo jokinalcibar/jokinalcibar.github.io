@@ -718,7 +718,7 @@ section,
   justify-content: center;
 } */
 
-.hero {
+/* .hero {
   width: 100%;
   min-height: 50.5vh;
   overflow: hidden;
@@ -728,6 +728,19 @@ section,
   align-items: center;
   justify-content: center;
   background-color: white; /* Add white background */
+} */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 600px; /* Add max-height for larger screens */
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
 
@@ -796,6 +809,25 @@ section,
     line-height: 36px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    max-height: none;
+  }
+  
+  .hero .container {
+    margin-top: -100px;
+  }
+  
+  .hero h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+}
+
+
 
 /* .hero .btn-scroll {
   transition: 0.4s;

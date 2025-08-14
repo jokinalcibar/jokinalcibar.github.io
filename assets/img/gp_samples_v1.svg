@@ -41,8 +41,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="933.36683"
-     inkscape:cy="519.07764"
+     inkscape:cx="933.36685"
+     inkscape:cy="501.21814"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -68,10 +68,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(268.98913,127.59061)">
+     transform="translate(268.98913,122.86528)">
     <g
-       id="g1128"
-       transform="matrix(1,0,0,1.0066296,0,0.83996966)">
+       id="g1136"
+       transform="matrix(1,0,0,1.0066934,0,0.8223912)">
       <image
          width="202.12224"
          height="134.74815"
@@ -81,23 +81,23 @@
          x="-4.9991684"
          y="8.4042473"
          clip-path="url(#clipPath937)"
-         transform="matrix(2.5133306,0,0,1.1668173,-256.42457,-73.45803)" />
+         transform="matrix(2.5133306,0,0,0.91928313,-256.42457,-36.562591)" />
       <rect
-         style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.41131;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+         style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.458794;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
          id="rect965"
          width="508"
-         height="97.192879"
+         height="120.92909"
          x="-268.98911"
-         y="-126.70071"
-         ry="0.41151536" />
+         y="-122.86529"
+         ry="0.51201469" />
       <rect
-         style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.355092;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+         style="font-variation-settings:normal;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.356267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
          id="rect965-9"
          width="508"
-         height="72.439659"
+         height="72.919907"
          x="-268.98911"
-         y="84.727715"
-         ry="0.30671006" />
+         y="88.064873"
+         ry="0.30874342" />
     </g>
   </g>
 </svg>
