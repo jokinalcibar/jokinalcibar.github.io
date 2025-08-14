@@ -745,7 +745,7 @@ section,
 
 .hero .container {
   margin-top: 0; /* Removed negative margin */
-  padding: 10px;
+  padding: -10px;
   position: relative;
   z-index: 3;
 }
