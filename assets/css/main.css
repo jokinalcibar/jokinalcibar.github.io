@@ -744,8 +744,7 @@ section,
 } */
 
 .hero .container {
-  margin-top: 0; /* Removed negative margin */
-  padding: -100px;
+  margin-top: -40px; /* Removed negative margin */
   position: relative;
   z-index: 3;
 }
