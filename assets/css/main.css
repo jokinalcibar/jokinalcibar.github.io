@@ -716,7 +716,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Ensures content stays contained */
+  /* overflow: hidden; Ensures content stays contained */
 }
 
 .hero:before {
@@ -738,7 +738,7 @@ section,
 }
 
 .hero .container {
-  margin-top: 0px; 
+  margin-top: -150px; 
   position: relative;
   z-index: 3;
 }
