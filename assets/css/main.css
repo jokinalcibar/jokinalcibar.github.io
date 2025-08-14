@@ -143,14 +143,15 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(0, 0, 0, 0.8); /* Changed from transparent to black */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 12px 0; /* Changed from 20px to match scrolled state */
   transition: all 0.5s;
   z-index: 997;
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1); /* Added shadow by default */
 }
 
 .header .logo {
@@ -705,9 +706,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+#  Section
 --------------------------------------------------------------*/
-.hero {
+/* .hero {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -715,7 +716,21 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+
+.hero {
+  width: 100%;
+  min-height: 50.5vh;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* Add white background */
 }
+
+
 
 .hero:before {
   content: "";
@@ -725,30 +740,50 @@ section,
   z-index: 2;
 }
 
+
 .hero img {
   position: absolute;
-  inset: 0;
-  display: block;
+  top: -765px;     
+  left: 0px;   
   width: 100%;
-  height: 100%;
+  height: 300%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   z-index: 1;
 }
 
 .hero .container {
+  margin-top: -150px; 
   position: relative;
   z-index: 3;
 }
+
+/* .hero h2 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 56px;
+} */
 
 .hero h2 {
   margin: 0;
   font-size: 36px;
   font-weight: 700;
   line-height: 56px;
+  color: #333; /* Dark text color */
 }
 
-.hero p {
+/* .hero p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 10px 0 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+} */
+
+.hero p {
+  color: #555; /* Slightly lighter dark color for paragraph */
   margin: 10px 0 0 0;
   font-size: 16px;
   font-weight: 500;
@@ -762,9 +797,17 @@ section,
   }
 }
 
-.hero .btn-scroll {
+/* .hero .btn-scroll {
   transition: 0.4s;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
+  display: block;
+  margin-top: 30px;
+  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
+} */
+
+.hero .btn-scroll {
+  transition: 0.4s;
+  color: #666; /* Darker scroll button */
   display: block;
   margin-top: 30px;
   animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
@@ -1059,6 +1102,88 @@ section,
     width: 80%;
   }
 }
+
+
+/* Publications Section */
+.publication-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.publication-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.publication-figure {
+  width: 200px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.publication-figure img {
+  max-height: 150px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.authors {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.journal {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.publication-links a {
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.btn-download, .btn-doi {
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-download {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-doi {
+  background-color: #e9ecef;
+  color: #0066cc;
+  border: 1px solid #ced4da;
+}
+
+@media (max-width: 768px) {
+  .publication-item {
+      flex-direction: column;
+  }
+  
+  .publication-figure {
+      width: 100%;
+      margin-top: 15px;
+  }
+  
+  .publication-content {
+      padding-right: 0;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Section
