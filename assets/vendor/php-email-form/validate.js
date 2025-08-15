@@ -84,7 +84,6 @@
 
 // })();
 
-
 (function () {
   "use strict";
 
@@ -108,20 +107,15 @@
       // Prepare form data
       const formData = new FormData(thisForm);
 
-      // Add CORS headers and AJAX identifier
-      const headers = new Headers();
-      headers.append('X-Requested-With', 'XMLHttpRequest');
-      headers.append('Accept', 'application/json');
-
+      // Send POST request (no custom headers to avoid preflight)
       fetch(thisForm.action, {
         method: 'POST',
         body: formData,
-        headers: headers,
-        credentials: 'same-origin' // Important for cookies if used
+        credentials: 'omit' // no cookies needed for cross-origin
       })
-      .then(response => {
+      .then(async response => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return response.json(); // Expect JSON response from InfinityFree
+        return response.json();
       })
       .then(data => {
         loading.classList.remove('d-block');
