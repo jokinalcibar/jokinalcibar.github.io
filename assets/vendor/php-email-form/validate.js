@@ -1,137 +1,70 @@
-/**
-* PHP Email Form Validation - v3.11
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
-// (function () {
-//   "use strict";
-
-//   let forms = document.querySelectorAll('.php-email-form');
-
-//   forms.forEach( function(e) {
-//     e.addEventListener('submit', function(event) {
-//       event.preventDefault();
-
-//       let thisForm = this;
-
-//       let action = thisForm.getAttribute('action');
-//       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-//       if( ! action ) {
-//         displayError(thisForm, 'The form action property is not set!');
-//         return;
-//       }
-//       thisForm.querySelector('.loading').classList.add('d-block');
-//       thisForm.querySelector('.error-message').classList.remove('d-block');
-//       thisForm.querySelector('.sent-message').classList.remove('d-block');
-
-//       let formData = new FormData( thisForm );
-
-//       if ( recaptcha ) {
-//         if(typeof grecaptcha !== "undefined" ) {
-//           grecaptcha.ready(function() {
-//             try {
-//               grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-//               .then(token => {
-//                 formData.set('recaptcha-response', token);
-//                 php_email_form_submit(thisForm, action, formData);
-//               })
-//             } catch(error) {
-//               displayError(thisForm, error);
-//             }
-//           });
-//         } else {
-//           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-//         }
-//       } else {
-//         php_email_form_submit(thisForm, action, formData);
-//       }
-//     });
-//   });
-
-//   function php_email_form_submit(thisForm, action, formData) {
-//     fetch(action, {
-//       method: 'POST',
-//       body: formData,
-//       headers: {'X-Requested-With': 'XMLHttpRequest'}
-//     })
-//     .then(response => {
-//       if( response.ok ) {
-//         return response.text();
-//       } else {
-//         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-//       }
-//     })
-//     .then(data => {
-//       thisForm.querySelector('.loading').classList.remove('d-block');
-//       if (data.trim() == 'OK') {
-//         thisForm.querySelector('.sent-message').classList.add('d-block');
-//         thisForm.reset(); 
-//       } else {
-//         throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-//       }
-//     })
-//     .catch((error) => {
-//       displayError(thisForm, error);
-//     });
-//   }
-
-//   function displayError(thisForm, error) {
-//     thisForm.querySelector('.loading').classList.remove('d-block');
-//     thisForm.querySelector('.error-message').innerHTML = error;
-//     thisForm.querySelector('.error-message').classList.add('d-block');
-//   }
-
-// })();
-
 (function () {
   "use strict";
 
-  const forms = document.querySelectorAll('.php-email-form');
+  const forms = document.querySelectorAll(".php-email-form");
 
   forms.forEach((form) => {
-    form.addEventListener('submit', function(event) {
+    form.addEventListener("submit", function (event) {
       event.preventDefault();
       const thisForm = this;
 
-      // Required elements
-      const loading = thisForm.querySelector('.loading');
-      const errorMessage = thisForm.querySelector('.error-message');
-      const sentMessage = thisForm.querySelector('.sent-message');
+      const loading = thisForm.querySelector(".loading");
+      const errorMessage = thisForm.querySelector(".error-message");
+      const sentMessage = thisForm.querySelector(".sent-message");
 
-      // Show loading state
-      loading.classList.add('d-block');
-      errorMessage.classList.remove('d-block');
-      sentMessage.classList.remove('d-block');
+      loading.classList.add("d-block");
+      errorMessage.classList.remove("d-block");
+      sentMessage.classList.remove("d-block");
 
-      // Prepare form data
-      const formData = new FormData(thisForm);
+      // Make sure your inputs have these *name* attributes:
+      // name="name", name="email", name="subject", name="message"
+      const name = (thisForm.querySelector('[name="name"]')?.value || "").trim();
+      const email = (thisForm.querySelector('[name="email"]')?.value || "").trim();
+      const subject = (thisForm.querySelector('[name="subject"]')?.value || "").trim();
+      const message = (thisForm.querySelector('[name="message"]')?.value || "").trim();
 
-      // Send POST request (no custom headers to avoid preflight)
+      // Send as x-www-form-urlencoded to guarantee PHP fills $_POST
+      const params = new URLSearchParams();
+      params.set("name", name);
+      params.set("email", email);
+      params.set("subject", subject);
+      params.set("message", message);
+
       fetch(thisForm.action, {
-        method: 'POST',
-        body: formData,
-        credentials: 'omit' // no cookies needed for cross-origin
+        method: "POST",
+        body: params.toString(),
+        headers: {
+          // Simple request → no preflight
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          Accept: "application/json"
+        },
+        credentials: "omit"
       })
-      .then(async response => {
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return response.json();
-      })
-      .then(data => {
-        loading.classList.remove('d-block');
-        if (data.status === 'success') {
-          sentMessage.classList.add('d-block');
-          thisForm.reset();
-        } else {
-          throw new Error(data.message || 'Unknown error occurred');
-        }
-      })
-      .catch((error) => {
-        loading.classList.remove('d-block');
-        errorMessage.textContent = error.message;
-        errorMessage.classList.add('d-block');
-        console.error('Error:', error);
-      });
+        .then(async (response) => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          // Try to parse JSON; if not JSON, throw to show raw text
+          const text = await response.text();
+          try {
+            return JSON.parse(text);
+          } catch {
+            throw new Error(text || "Unexpected non-JSON response");
+          }
+        })
+        .then((data) => {
+          loading.classList.remove("d-block");
+          if (data.status === "success") {
+            sentMessage.classList.add("d-block");
+            thisForm.reset();
+          } else {
+            throw new Error(data.message || "Unknown error occurred");
+          }
+        })
+        .catch((error) => {
+          loading.classList.remove("d-block");
+          errorMessage.textContent = error.message;
+          errorMessage.classList.add("d-block");
+          console.error("Error:", error);
+        });
     });
   });
 })();
